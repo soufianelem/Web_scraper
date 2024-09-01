@@ -29,7 +29,7 @@ def start_monitoring(urls, interval, log_text, stop_event):
         for url in urls:
             check_new_posts(url, log_text)
         log_text.insert(tk.END, f"Waiting for {interval} minutes...\n")
-        time.sleep(interval * 60)  # Convert minutes to seconds
+        time.sleep(interval * 60)  
 
 def on_start_button_click():
     urls = url_entry.get()
@@ -68,7 +68,6 @@ stop_button.pack(pady=5)
 log_text = tk.Text(root, height=10, width=60)
 log_text.pack(pady=10)
 
-# Use threading.Event to signal stopping
 stop_event = Event()
 
 root.mainloop()
